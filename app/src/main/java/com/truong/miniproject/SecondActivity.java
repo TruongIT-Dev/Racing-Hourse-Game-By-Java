@@ -1,8 +1,10 @@
 package com.truong.miniproject;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -21,6 +23,7 @@ public class SecondActivity extends AppCompatActivity {
     private Random random = new Random();
     private Handler handler = new Handler();
     private int coins = 100;
+    private  Button btnMusic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +44,20 @@ public class SecondActivity extends AppCompatActivity {
         horse1CheckBox = findViewById(R.id.horse_1);
         horse2CheckBox = findViewById(R.id.horse_2);
         horse3CheckBox = findViewById(R.id.horse_3);
+        btnMusic = findViewById(R.id.musicButton);
 
         resultTextNumber.setEnabled(false);
         resultTextNumber.setText(String.valueOf(coins));
 
         disableSeekBars();
+
+        btnMusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SecondActivity.this, BackgroundService.class);
+                startService(intent);
+            }
+        });
 
         startButton.setOnClickListener(v -> {
             resetProgress();
@@ -67,6 +79,7 @@ public class SecondActivity extends AppCompatActivity {
 
         logoutButton.setOnClickListener(v -> showLogoutConfirmation());
     }
+
 
     private boolean validateBets() {
         if (!horse1CheckBox.isChecked() && !horse2CheckBox.isChecked() && !horse3CheckBox.isChecked()) {
