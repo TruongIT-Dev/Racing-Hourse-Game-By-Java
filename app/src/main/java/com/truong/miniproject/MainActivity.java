@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     // If valid, navigate to another screen (NextActivity)
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });

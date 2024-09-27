@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -7,7 +6,6 @@
     android:padding="16dp"
     android:background="@drawable/green_background">
 
-    <!-- Title -->
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -16,16 +14,13 @@
         android:textAlignment="center"
         android:textStyle="bold"
         android:layout_marginBottom="24sp"
-        android:text="Racing Horse Game" />
+        android:text="Horse Racing Game" />
 
-
-    <!-- Image, Bet, Money Component -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <!-- Image -->
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="200dp"
@@ -33,7 +28,6 @@
             android:layout_gravity="center"
             app:srcCompat="@drawable/horse_race_image" />
 
-        <!-- Bet & Money Component -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -41,139 +35,128 @@
             android:layout_gravity="center"
             android:gravity="center">
 
-            <!-- Bet Money -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/cashText"
-                    android:layout_width="0dp"
+                    android:layout_width="54dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Cash $: "
+                    android:text="Wallet: "
                     android:textSize="16dp" />
 
                 <EditText
-                    android:id="@+id/gamblingTextNumber"
-                    android:layout_width="25dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <!-- Winning Money -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:textSize="16dp"
-                    android:text="Win $: "/>
-
-                <EditText
                     android:id="@+id/resultTextNumber"
-                    android:layout_width="25dp"
+                    android:layout_width="89dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:ems="10"
                     android:gravity="center"
                     android:inputType="number" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="$"
+                    android:textSize="16dp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
-
-    <!-- Checkbox Player 1 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
 
         <CheckBox
             android:id="@+id/horse_1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="24sp"
-            android:text="Horse 1"/>
+            android:layout_height="wrap_content"/>
 
-        <ProgressBar
+        <SeekBar
             android:id="@+id/road_1"
-            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:max="100"
-            android:progress="50"
-            android:progressDrawable="@drawable/custom_progress_bar"/>
+            android:progress="0"
+            android:thumb="@drawable/horse_icon"
+            />
 
+        <EditText
+            android:id="@+id/bet_horse_1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:hint="Bet $"
+            android:inputType="number" />
     </LinearLayout>
 
-    <!-- Checkbox Player 2 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
 
         <CheckBox
             android:id="@+id/horse_2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="24sp"
-            android:text="Horse 2" />
+            android:layout_height="wrap_content"/>
 
-        <ProgressBar
+        <SeekBar
             android:id="@+id/road_2"
-            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:max="100"
-            android:progress="40"
-            android:progressDrawable="@drawable/custom_progress_bar"/>
+            android:progress="0"
+            android:thumb="@drawable/horse_icon"/>
 
+        <EditText
+            android:id="@+id/bet_horse_2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:hint="Bet $"
+            android:inputType="number" />
     </LinearLayout>
 
-    <!-- Checkbox Player 3 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
 
         <CheckBox
             android:id="@+id/horse_3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="24sp"
-            android:text="Horse 3" />
+            android:layout_height="wrap_content"/>
 
-        <ProgressBar
+        <SeekBar
             android:id="@+id/road_3"
-            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:max="100"
-            android:progress="80"
-            android:progressDrawable="@drawable/custom_progress_bar"/>
+            android:progress="0"
+            android:thumb="@drawable/horse_icon"/>
 
+        <EditText
+            android:id="@+id/bet_horse_3"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:hint="Bet $"
+            android:inputType="number" />
     </LinearLayout>
 
-    <!-- Button -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -181,25 +164,36 @@
         android:layout_gravity="center"
         android:layout_marginTop="34dp">
 
-        <!-- Start Button -->
         <Button
             android:id="@+id/startButton"
-            android:layout_width="wrap_content"
+            android:layout_width="95dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Start"
-            android:layout_marginRight="24sp"/>
+            android:layout_marginRight="20dp"
+            android:text="Start" />
 
-        <!-- Reset Button -->
         <Button
             android:id="@+id/resetButton"
-            android:layout_width="wrap_content"
+            android:layout_width="95dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Reset" />
+            android:layout_marginRight="20dp"
+            android:text="Reset Race" />
+
+        <Button
+            android:id="@+id/resetMoneyButton"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Reset Money" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Logout" />
 
 
 </LinearLayout>
