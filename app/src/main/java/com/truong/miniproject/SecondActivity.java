@@ -50,7 +50,7 @@ public class SecondActivity extends AppCompatActivity {
         resultTextNumber.setText(String.valueOf(coins));
 
         disableSeekBars();
-
+        //music button
         btnMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
